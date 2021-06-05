@@ -1,0 +1,22 @@
+[
+    {
+        "subject": "Linear Algebra1",
+        "subid": "MAT241"
+    },
+    {
+        "subject": "Programing 1",
+        "subid": "CIT102"
+    },
+    {
+        "subject": "Programing 2",
+        "subid": "CIT104"
+    },
+    {
+        "subject": "Programing 3",
+        "subid": "CIT105"
+    },
+    {
+        "subject": "Programing 4",
+        "subid": "CIT106"
+    }
+]

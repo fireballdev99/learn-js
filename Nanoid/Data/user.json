@@ -1,0 +1,79 @@
+[
+    {
+        "id": "BE_6345492123",
+        "name": "Ball",
+        "username": "st01",
+        "password": "password",
+        "type": "student"
+    },
+    {
+        "id": "BE_6150593007",
+        "name": "Ball2",
+        "username": "st02",
+        "password": "password",
+        "type": "student"
+    },
+    {
+        "id": "BE_0670731804",
+        "name": "Ball3",
+        "username": "st03",
+        "password": "password",
+        "type": "student"
+    },
+    {
+        "id": "BE_0006106552",
+        "name": "Ball4",
+        "username": "st04",
+        "password": "password",
+        "type": "student"
+    },
+    {
+        "id": "BE_8431154889",
+        "name": "Ball5",
+        "username": "st05",
+        "password": "password",
+        "type": "student"
+    },
+    {
+        "id": "BE_7623805819",
+        "name": "Ball6",
+        "username": "st06",
+        "password": "password",
+        "type": "student"
+    },
+    {
+        "id": "BE_3813527475",
+        "name": "Ball7",
+        "username": "st07",
+        "password": "password",
+        "type": "student"
+    },
+    {
+        "id": "BE_2346307622",
+        "name": "Teacher1",
+        "username": "teacher1",
+        "password": "password",
+        "type": "teacher"
+    },
+    {
+        "id": "BE_4358308564",
+        "name": "Teacher2",
+        "username": "teacher2",
+        "password": "password",
+        "type": "teacher"
+    },
+    {
+        "id": "BE_9097403050",
+        "name": "Teacher3",
+        "username": "teacher3",
+        "password": "password",
+        "type": "teacher"
+    },
+    {
+        "id": "BE_1859202842",
+        "name": "Teacher4",
+        "username": "teacher4",
+        "password": "password",
+        "type": "teacher"
+    }
+]
