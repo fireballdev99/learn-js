@@ -26,21 +26,26 @@ const readssub = () => {
     return (
         fs.readFile('./Data/s-sublist.json', 'utf8', (err, data) => {
             let datas = JSON.parse(data)
-            console.log(datas.map(item => {
+            let result = (datas.map(item => {
                 return ("Subject :" + item.subject + "(" + item.subid + ")")
             }));
+
+            console.log(result);
 
         })
     )
 
 }
+
 const readtsub = () => {
     return (
         fs.readFile('./Data/t-sublist.json', 'utf8', (err, data) => {
             let datas = JSON.parse(data)
-            console.log(datas.map(item => {
+            let result = (datas.map(item => {
                 return ("Subject :" + item.subject + "(" + item.subid + ")")
             }));
+
+            console.log(result);
 
         })
     )
@@ -81,7 +86,7 @@ const readuser = (username, password) => {
     })
 }
 
-readuser("st01", "passworda")
+readuser("teacher1", "password")
 
 
 
