@@ -1,92 +1,50 @@
-//โจทย์ก็คือ ให้ทำการเขียน lib / nanoid โดยการสุ่ม ตัวอักษร สามารถรับตัวแปร คำนำหน้าได้ และกรณีไม่มีคำนำหน้า ให้เป็น SA_ ดังเดิม
-//รวมถึงสามารถแสดงความยาวของการสุ่มได้ด้วยเช่นกัน โดยฟังก์ชันสุ่มมีสองแบบ 1.สุ่มตัวเลข และความยาว 2.สุ่มตัวอักษรและความยาว
-
-
-
-// fs.readFile('./data.json', 'utf8', (err, data) => {
-//     let ulogin = "admins";
-//     // let plogin = "password";
-//     let datas = JSON.parse(data)
-//     datas.map(item => {
-//         if (ulogin == item.username) {
-//             console.log('มีข้อมูล');
-//         } else {
-//             console.log('ไม่มี');
-//         }
-//     })
-
-
-
-//     // console.log(datas)
-// })
-
 const fs = require('fs')
 
-const readssub = () => {
-    return (
-        fs.readFile('./Data/s-sublist.json', 'utf8', (err, data) => {
-            let datas = JSON.parse(data)
-            let result = (datas.map(item => {
-                return ("Subject :" + item.subject + "(" + item.subid + ")")
-            }));
+const Run = (username, password) => {
+    const readUser = fs.readFileSync('./Data/user.json', 'utf8');
+    const users = JSON.parse(readUser)
 
-            console.log(result);
+    const readSubject = (type) => fs.readFile(`./Data/${type}.json`, 'utf8', (err, data) => {
+        let datas = JSON.parse(data)
+        let subject = datas.map(item => "Subject :" + item.subject + "(" + item.subid + ")"
+        );
+        return console.log(subject);
 
-        })
-    )
-
-}
-
-const readtsub = () => {
-    return (
-        fs.readFile('./Data/t-sublist.json', 'utf8', (err, data) => {
-            let datas = JSON.parse(data)
-            let result = (datas.map(item => {
-                return ("Subject :" + item.subject + "(" + item.subid + ")")
-            }));
-
-            console.log(result);
-
-        })
-    )
-
-}
-
-
-
-const readuser = (username, password) => {
+    });
     let usernames = username;
     let passwords = password;
+    let role = ""
+    let name = ""
     let isValid = null;
     let isStudent = null;
-    fs.readFile('./Data/user.json', 'utf8', (err, data) => {
-        let datas = JSON.parse(data)
-        datas.map(item => {
-            if (usernames == item.username && passwords == item.password) {
-                isValid = true;
-                if (item.type == "student") {
-                    isStudent = true
-                } else {
-                    isStudent = false;
-                }
-            }
-        })
-        if (isValid) {
-            if (isStudent) {
-                console.log("Subject of Student");
-                readssub();
+    let type = ""
+    users.map(item => {
+        if (usernames == item.username && passwords == item.password) {
+            isValid = true;
+            name = item.name
+            if (item.type === "student") {
+                isStudent = true;
+                type = "s-sublist"
+                role = "Student"
             } else {
-
-                console.log("Subject of Teacher");
-                readtsub();
+                type = "t-sublist"
+                role = "Teacher"
             }
-        } else {
-            console.log("Username or Password invalid");
         }
     })
+    if (isValid) {
+        console.log(`Hello ${name}`);
+        console.log(`You are ${role}`);
+        console.log('Your Subject is');
+        if (isStudent) {
+            readSubject(type)
+        } else {
+            readSubject(type)
+        }
+    } else {
+        console.log("Username or Password is novalid Please try again");
+    }
+
+
 }
-
-readuser("teacher1", "password")
-
-
-
+Run("teacher1", "password")
