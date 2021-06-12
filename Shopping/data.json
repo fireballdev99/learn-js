@@ -1,0 +1,17 @@
+[
+    {
+        "Product": "Chicken",
+        "Price": 40,
+        "Amount": 5
+    },
+    {
+        "Product": "Pork",
+        "Price": 200,
+        "Amount": 20
+    },
+    {
+        "Product": "Beef",
+        "Price": 300,
+        "Amount": 215
+    }
+]
