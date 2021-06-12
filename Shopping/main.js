@@ -39,6 +39,7 @@ let add = 1
 let view = 2
 let sell = 3
 let update = 4
+// method , Product Name , Price , Amount
 main(update, "Beef", 300, 200)
 
 // console.log(SubCars2.subNameField())
